@@ -62,6 +62,9 @@ const facts = [
 ];
 
 export default function HomePage() {
+
+  const basePath = process.env.NODE_ENV === "production" ? "/Portafolio" : "";
+
   return (
     <>
       <style>{`
@@ -213,7 +216,7 @@ export default function HomePage() {
                       <div className="relative flex h-90 w-90 items-center justify-center rounded-full border-12 border-blue-500/90 bg-slate-950 shadow-2xl">
                         <div className="relative h-80 w-80 overflow-hidden rounded-full">
                           <Image
-                            src="/profile.jpg"
+                            src={`${basePath}/profile.jpg`}
                             alt="Anderson Navarro Gamboa"
                             fill
                             priority
@@ -386,7 +389,7 @@ export default function HomePage() {
                       Contactarme
                       </a>
                     <a
-                      href="/ANG.pdf"
+                      href={`${basePath}/ANG.pdf`}
                       download
                       className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
                     >
